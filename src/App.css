@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.todo{
+  list-style-type: none;
+  height:50px;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.todos li:nth-child(2n){
+  background:#edf1f5;
+}
+
+.todos li:hover span{
+  width: 50px;
+  opacity: 1.0;
+  margin-left: 5px;
+}

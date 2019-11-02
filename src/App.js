@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import TodoList from './TodoList';
 class App extends Component {
-constructor(props) {
-        super(props);
-        this.state = {
-          todoList: []
-        };
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoList: []
+    };
+  }
+
   async componentDidMount() {
     let response = await fetch("https://jsonplaceholder.typicode.com/todos")
     let todos = await response.json()
     this.setState({todoList: todos})
   }
+
   render() {
     return (
     <div className="App">
       <header className="App-header">
-      <ul>
-      		{this.state.todoList.map((todo) => (
-	      		<li>{todo.title}</li>
-      		))}      
-      </ul>
+      <TodoList todoList={this.state.todoList} />
       <p>
           Edit <code>src/App.js</code> and save to reload.
       </p>
